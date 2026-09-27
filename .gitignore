@@ -1,0 +1,12 @@
+node_modules/
+.env
+.env.*
+!.env.example
+data/
+state/
+artifacts/
+*.log
+.DS_Store
+coverage/
+*.pre-share.json
+_backups/

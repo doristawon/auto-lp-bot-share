@@ -1,0 +1,35 @@
+{
+  "name": "auto-lp-bot",
+  "version": "0.6.0",
+  "private": true,
+  "type": "module",
+  "description": "Fables.fi LP monitor, accounting dashboard and guarded rebalance bot for Robinhood Chain",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "once": "node src/index.js --once",
+    "dashboard": "node src/index.js --dashboard-only",
+    "inspect:tx": "node src/tools/inspect-reference-tx.js",
+    "audit:wallet": "node src/tools/audit-wallet-v2.js",
+    "test": "node --test test/*.test.js",
+    "check": "node --check src/index.js && node --check src/bot.js && node --check src/config.js && node --check src/runtime-credentials.js && node --check src/adapters/fables.js && node --check src/adapters/fables-stats.js && node --check src/adapters/executor.js && node --check src/adapters/quoter.js && node --check src/analytics/portfolio.js && node --check src/analytics/rebalance-plan.js && node --check src/analytics/points-evidence.js && node --check src/analytics/points.js && node --check src/analytics/points-tracker.js && node --check src/dashboard/page.js && node --check src/dashboard/server.js && node --check src/execution/reference-analysis.js && node --check src/rpc/providers.js && node --check src/rpc/blockscout.js && node --check src/tools/inspect-reference-tx.js && node --check src/tools/audit-wallet-v2.js && node --check src/adapters/universal-router.js && node --check src/tools/simulate-v4-swap.js && node --check src/tools/verify-wallet-topology.js && node --check src/tools/analyze-range-policy.js && node --check src/math/v4-fixed.js && node --check src/execution/exact-rebalance.js && node --check scripts/compile-guard.js && node --check src/tools/setup-7702-guard.js && node --check src/tools/probe-7702.js && node --check src/tools/deploy-7702-guard.js && node --check src/tools/inspect-recovery.js && node --check src/tools/verify-7702-guard.js && node --check src/logger.js",
+    "analyze:range-policy": "node src/tools/analyze-range-policy.js",
+    "compile:guard": "node scripts/compile-guard.js",
+    "setup:guard": "node src/tools/setup-7702-guard.js",
+    "probe:7702": "node src/tools/probe-7702.js",
+    "deploy:guard": "node src/tools/deploy-7702-guard.js",
+    "inspect:recovery": "node src/tools/inspect-recovery.js",
+    "verify:guard": "node src/tools/verify-7702-guard.js"
+  },
+  "dependencies": {
+    "ethers": "^6.15.0"
+  },
+  "devDependencies": {
+    "solc": "0.8.37"
+  },
+  "overrides": {
+    "tmp": "0.2.7"
+  }
+}
